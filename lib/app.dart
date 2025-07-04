@@ -1,5 +1,5 @@
-import 'package:crobros/Utils/Theme.dart' show TAppTheme;
-import 'package:crobros/Utils/custom_themes/appbar_theme.dart' as theme;
+import 'package:crobros/Utils/theme/Theme.dart' show TAppTheme;
+import 'package:crobros/Utils/theme/custom_themes/appbar_theme.dart' as theme;
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
