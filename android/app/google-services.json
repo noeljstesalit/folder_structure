@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "281848962603",
+    "project_id": "crobros-63f84",
+    "storage_bucket": "crobros-63f84.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:281848962603:android:55bb5953c50a107837d46e",
+        "android_client_info": {
+          "package_name": "com.example.crobros"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "281848962603-lfm2oq9u21pgle25ddp8g0mhs3aj9tod.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuUZlU7MtGQYdk3F3iuHwbI9VdqLIgmrI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "281848962603-lfm2oq9u21pgle25ddp8g0mhs3aj9tod.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "281848962603-s7clf77n27gbt01htcukfci0d5rnhe5e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.crobros"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
