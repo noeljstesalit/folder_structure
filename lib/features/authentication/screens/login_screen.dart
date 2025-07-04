@@ -1,7 +1,8 @@
 import 'dart:ui';
-import 'package:crobros/Login/SignUp_screen.dart';
+import 'package:crobros/features/authentication/controllers/login_controller.dart';
+import 'package:crobros/features/authentication/models/user_model.dart';
+import 'package:crobros/features/authentication/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -9,22 +10,26 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final LoginController _loginController = LoginController();
   bool _rememberMe = false;
   String _errorMessage = '';
 
-  Future<void> _signIn() async {
-    try {
-      await _auth.signInWithEmailAndPassword(
-        email: _emailController.text.trim(),
-        password: _passwordController.text.trim(),
-      );
-      // Navigate to home (implement later)
-    } catch (e) {
-      setState(() => _errorMessage = e.toString());
+  Future<void> _handleSignIn() async {
+    final user = UserModel(
+      email: _emailController.text,
+      password: _passwordController.text,
+    );
+
+    final result = await _loginController.signIn(user);
+
+    if (result == null) {
+      // TODO: Navigate to Home Page
+    } else {
+      setState(() {
+        _errorMessage = result;
+      });
     }
   }
 
@@ -37,9 +42,7 @@ class _LoginPageState extends State<LoginPage> {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(
-                  'assets/dark.jpg',
-                ), // Set your background image here
+                image: AssetImage('assets/dark.jpg'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -107,7 +110,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           TextButton(
                             onPressed: () {
-                              // Implement forgot password logic
+                              // TODO: Forgot password logic
                             },
                             child: Text(
                               'Forgot Password?',
@@ -118,12 +121,10 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       SizedBox(height: 20),
                       ElevatedButton(
-                        onPressed: _signIn,
+                        onPressed: _handleSignIn,
                         style: ElevatedButton.styleFrom(
                           minimumSize: Size(double.infinity, 50),
-                          backgroundColor: Colors.black.withOpacity(
-                            0.5,
-                          ), // Decreased opacity
+                          backgroundColor: Colors.black.withOpacity(0.5),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
