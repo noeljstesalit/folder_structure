@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class ThelperFunctions {
+class THelperFunctions {
   // Function to check if a string is empty or null
   static bool isStringEmpty(String? str) {
     return str == null || str.isEmpty;
@@ -18,5 +19,13 @@ class ThelperFunctions {
 
   static bool isDarkModeEnabled(BuildContext context) {
     return Theme.of(context).brightness == Brightness.dark;
+  }
+
+  static double getScreenWidth() {
+    return MediaQuery.of(Get.context!).size.width;
+  }
+
+  static double getScreenHeight() {
+    return MediaQuery.of(Get.context!).size.height;
   }
 }

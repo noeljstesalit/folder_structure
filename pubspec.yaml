@@ -25,6 +25,7 @@ dependencies:
   http: ^1.4.0
   intl: ^0.20.2
   logger: ^2.6.0
+  smooth_page_indicator: ^1.2.1
   url_launcher: ^6.3.1
 
 # development dependencies
@@ -54,12 +55,13 @@ flutter:
     - assets/icons/
     - assets/images/
     - assets/logos/
+    - assets/images/onboarding_images/
   # fonts:
-  fonts:
-    - family: Schyler
-      fonts:
-        - asset: fonts/Schyler-Regular.ttf
-          weight: 400
-        - asset: fonts/Schyler-Italic.ttf
-          weight: 400
-          style: italic
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #         weight: 400
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         weight: 400
+  #         style: italic
